@@ -1,0 +1,42 @@
+schema{
+	query: Query
+	mutation: Mutation
+}
+
+type Query{
+getAllEmployees : [Employee]
+findEmployee(id: Int) : Employee
+users(firstName: String!): [Employee]
+findProdByName(name: String!): [Product]
+findManufacturer(name: String!): [Manufacturer]
+}
+
+type Employee{
+id: Int
+firstName: String
+lastName: String
+contact: String
+email: String
+}
+
+type Product{
+id: Float
+productName: String
+productType: String
+manufacturer: String
+unitSoldSoFar: String
+price: Float
+}
+
+type Manufacturer{
+id: Int
+name: String
+origin: String
+userRatings: String
+noOfProductAvailable: Int
+annualRevenue: Float
+}
+
+type Mutation{
+createEmp(id: Int, nam: String, firstName: String,  contact: String, email: String): Employee
+}
